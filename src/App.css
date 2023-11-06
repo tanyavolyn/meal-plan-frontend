@@ -47,3 +47,6 @@ p{
   align-items: center;
   
 }
+.btn:hover{
+  cursor: pointer;
+}

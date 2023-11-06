@@ -3,9 +3,9 @@ import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 export const MyMeals = ({text, updatingInInput, deleteMeal}) => {
     return(
         <div className='meal'>
-            <p>My Meal</p>
-            <AiOutlineEdit onClick={updatingInInput}/>
-            <AiOutlineDelete onClick={deleteMeal}/>
+            <p>{text}</p>
+            <AiOutlineEdit className="btn" onClick={updatingInInput}/>
+            <AiOutlineDelete className="btn" onClick={deleteMeal}/>
         </div>
     )
 }

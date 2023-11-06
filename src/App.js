@@ -26,12 +26,20 @@ function App() {
 
       <div className="container">
       <h1>MEAL PLAN</h1>
-      <input type="text" placeholder="Add a meal" value ={title} onChange={(e) => setTitle(e.target.value)}/>
-      <button disabled= {!title} onClick={editing ? () => editMeal(mealId, title, setMeal, setTitle, setEditing) : () => addMeal(title, setTitle, setMeal)}>{editing ? "Edit" : "Add"}</button>
-    {myMeal.map((meal) => <MyMeals text={meal.title} key={meal._id} 
+      <input type="text" 
+      placeholder="Add a meal" 
+      value ={title} 
+      onChange={(e) => setTitle(e.target.value)}/>
+
+      <button disabled= {!title} 
+      onClick={editing ? () => editMeal(mealId, title, setTitle, setMeal, setEditing) : () => addMeal(title, setTitle, setMeal)}>
+      {editing ? "Edit" : "Add"}</button>
+
+     {myMeal.map((meal) => <MyMeals text={meal.title} key={meal._id} 
     updatingInInput ={() => updatingInInput(meal._id, meal.title)} 
-    deleteMeal={() => deleteMeal(meal._id, setMeal)}
-    />)}
+    deleteMeal={() => deleteMeal(meal._id, setMeal)}/>
+    )} 
+
       </div>
       
     </div>
