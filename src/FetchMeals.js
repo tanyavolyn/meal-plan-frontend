@@ -2,13 +2,13 @@ import axios from 'axios';
 
 //GET
 const getAllMeals = (setMeal) => {
-    axios.get("http://localhost:7000").then(({data}) => {console.log(data)
+    axios.get("https://meal-plan-99yy.onrender.com").then(({data}) => {console.log(data)
     setMeal(data)
 })
 }
  //POST
 const addMeal = (title, setTitle, setMeal) => {
-    axios.post("http://localhost:7000/saveMeals", {title}).then((data) => {
+    axios.post("https://meal-plan-99yy.onrender.com/saveMeals", {title}).then((data) => {
         console.log(data);
             setTitle("");
             getAllMeals(setMeal)
@@ -16,7 +16,7 @@ const addMeal = (title, setTitle, setMeal) => {
 }
 //EDIT
 const editMeal = (mealId, title, setTitle, setMeal, setEditing) => {
-    axios.put("http://localhost:7000/editMeal", {_id: mealId, title}).then((data) => {
+    axios.put("https://meal-plan-99yy.onrender.com/editMeal", {_id: mealId, title}).then((data) => {
         console.log(data)
         setTitle("")
         setEditing(false)
@@ -25,14 +25,14 @@ const editMeal = (mealId, title, setTitle, setMeal, setEditing) => {
 } 
 //DELETE
 const deleteMeal = (_id, setMeal) => {
-    axios.post("http://localhost:7000/deleteMeal", { _id }).then((data) => {
+    axios.post("https://meal-plan-99yy.onrender.com/deleteMeal", { _id }).then((data) => {
         console.log(data)
         getAllMeals(setMeal)
     })
 }
 //DELETE ALL
 const deleteAll = (setMeal) => {
-    axios.post('http://localhost:7000/deleteAll')
+    axios.post('https://meal-plan-99yy.onrender.com/deleteAll')
     .then(() => {
             getAllMeals(setMeal);
         });
