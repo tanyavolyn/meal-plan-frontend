@@ -25,7 +25,7 @@ const editMeal = (mealId, title, setTitle, setMeal, setEditing) => {
 } 
 //DELETE
 const deleteMeal = (_id, setMeal) => {
-    axios.delete("http://localhost:7000/deleteMeal", { _id }).then((data) => {
+    axios.post("http://localhost:7000/deleteMeal", { _id }).then((data) => {
         console.log(data)
         getAllMeals(setMeal)
     })

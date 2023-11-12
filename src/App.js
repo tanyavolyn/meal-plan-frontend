@@ -20,10 +20,19 @@ function App() {
     setTitle(title)
     setMealId(_id)
   }
+const onFormSubmit = (e) =>{
+  e.preventDefault();
+}
+
+const deleteAllMeals = () => {
+const deleteMeals = [];
+setMeal(deleteMeals)
+}
+
 
   return (
     <div className="App">
-
+<form onSubmit={onFormSubmit}>
       <div className="container">
       <h1>MEAL PLAN</h1>
       <input type="text" 
@@ -39,9 +48,9 @@ function App() {
     updatingInInput ={() => updatingInInput(meal._id, meal.title)} 
     deleteMeal={() => deleteMeal(meal._id, setMeal)}/>
     )} 
-
+<button onClick={deleteAllMeals}>Delete all</button>
       </div>
-      
+      </form>
     </div>
   );
 }
