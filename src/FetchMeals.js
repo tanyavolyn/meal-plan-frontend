@@ -30,5 +30,12 @@ const deleteMeal = (_id, setMeal) => {
         getAllMeals(setMeal)
     })
 }
+//DELETE ALL
+const deleteAll = (setMeal) => {
+    axios.post('http://localhost:7000/deleteAll')
+    .then(() => {
+            getAllMeals(setMeal);
+        });
+  }
 
-export { getAllMeals, addMeal, editMeal, deleteMeal }
+export { getAllMeals, addMeal, editMeal, deleteMeal, deleteAll }

@@ -2,7 +2,7 @@
 import './App.css';
 import { MyMeals } from './MyMeals';
 import { useEffect, useState } from 'react';
-import { getAllMeals, addMeal, editMeal, deleteMeal } from './FetchMeals';
+import { getAllMeals, addMeal, editMeal, deleteMeal, deleteAll } from './FetchMeals';
 
 function App() {
 
@@ -24,13 +24,7 @@ const onFormSubmit = (e) =>{
   e.preventDefault();
 }
 
-const deleteAllMeals = () => {
-const deleteMeals = [];
-setMeal(deleteMeals)
-}
-
-
-  return (
+ return (
     <div className="App">
 <form onSubmit={onFormSubmit}>
       <div className="container">
@@ -48,7 +42,7 @@ setMeal(deleteMeals)
     updatingInInput ={() => updatingInInput(meal._id, meal.title)} 
     deleteMeal={() => deleteMeal(meal._id, setMeal)}/>
     )} 
-<button onClick={deleteAllMeals}>Delete all</button>
+ <button onClick={() => deleteAll(setMeal)}>Delete All</button>
       </div>
       </form>
     </div>
